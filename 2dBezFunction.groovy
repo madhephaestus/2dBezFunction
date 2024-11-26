@@ -11,9 +11,19 @@ CSG marker = new Cube(5,2,2).toCSG()
 double targetX = 100
 double targetY = 200
 
+double currentOrentation = -0
+double targetOrentation =+180
+double handleLength =100;
+
+
 def p0 = [0,0]
-def p1 = [-100,0]
-def p2 = [150,50]
+def p1 = [
+handleLength * Math.cos(Math.toRadians(currentOrentation)),
+handleLength * Math.sin(Math.toRadians(currentOrentation))]
+def p2 = [
+handleLength * Math.cos(Math.toRadians(180+targetOrentation))+targetX,
+handleLength * Math.sin(Math.toRadians(180+targetOrentation))+targetY
+]
 def p3 = [targetX,targetY]
 
 def parts = []
